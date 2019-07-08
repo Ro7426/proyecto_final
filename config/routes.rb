@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'offers/index'
+  get 'offers/create'
+  devise_for :users, controllers: {
+
+    registrations: 'users/registrations'
+  }
+
   get 'pages/home'
   resources :books
-  devise_for :users
   # root to: "books#index"
   root to: "pages#home"
 

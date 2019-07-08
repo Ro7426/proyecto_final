@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Dueño del libro:</strong>
+  <%= @book.user.try(:name) %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
@@ -14,6 +19,7 @@
   <strong>Genre:</strong>
   <%= @book.genre %>
 </p>
+
 
 <p>
   <strong>Photo:</strong>

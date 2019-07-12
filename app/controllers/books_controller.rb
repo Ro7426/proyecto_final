@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   def index
     if params[:current].present?
       @books = Book.where(user_id: current_user.id)
-      # @books = Book.find(params[:current_user.id])
+
     else
       @books = Book.all
     end

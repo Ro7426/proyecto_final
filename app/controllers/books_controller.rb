@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
+  authorize_resource 
 
   # GET /books
   # GET /books.json
@@ -35,14 +36,16 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    
     @book.user = current_user
 
     respond_to do |format|
-      if @book.save
+      if @book.photo.attached?
+        @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
-        format.html { render :new }
+        format.html { redirect_to new_book_path, notice: "Error en el formulario" }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end

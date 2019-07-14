@@ -3,4 +3,5 @@ class Book < ApplicationRecord
   has_many :users, through: :exchanges
   belongs_to :user
   has_one_attached :photo
+  validates :title, presence: true
 end

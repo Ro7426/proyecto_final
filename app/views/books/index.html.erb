@@ -23,7 +23,7 @@
 <div class="card-img-top img-fluid" style="width: 20rem;">
   <%= image_tag(book.photo, class: "card-img-top img-fluid", alt:"...", style:"width:50%") if book.photo.attached? %>
   <div class="card-body">
-    <%= button_to "Intercambiar", action: "new" %>
+    <%= button_to "Me interesa", action: "new" %>
     <th>Dueño del Libro</th>
     <h6 class="card-title"><%= book.user.try(:name) %></h6>
     <th>Titulo</th>

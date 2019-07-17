@@ -1,5 +1,39 @@
 <p id="notice"><%= notice %></p>
 
+
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Usuarios interesados en tus libros</th>
+      <th scope="col">Link a sus libros</th>
+      <th scope="col">Mandar Mensaje</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>link a libros</td>
+      <td>mensaje</td>
+
+
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>link a libros</td>
+      <td>mensaje</td>
+
+      
+    </tr>
+
+  </tbody>
+</table>
+
 <p>
   <strong>Dueño del libro:</strong>
   <%= @book.user.try(:name) %>
@@ -21,17 +55,13 @@
 </p>
 
 
-<p>
-<strong>Photo:</strong>
-<br>
-  <%= image_tag @book.photo %>
-</p>
+
 
 
 
 <p>
   <strong>Photo:</strong>
-  <%= @book.photo %>
+  <% @book.photo %>
 </p>
 
 <p>
@@ -43,6 +73,14 @@
   <strong>Description:</strong>
   <%= @book.description %>
 </p>
+
+
+<p>
+<strong>Photo:</strong>
+<br>
+  <%= image_tag @book.photo, class:"img-thumbnail" %>
+</p>
+
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

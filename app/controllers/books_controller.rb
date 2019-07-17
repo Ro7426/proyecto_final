@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     
     @books = @books.where(user_id: current_user.id) if params[:current].present?
 
-    @books = @books.where('title  like ?' ,"%#{params[:q]}") if params[:q].present?
+    @books = @books.where('title like ? or author like ?' ,"%#{params[:q]}%", "%#{params[:q]}%") if params[:q].present?
   end
 
 

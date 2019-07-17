@@ -29,10 +29,13 @@
       </li>
 
       <li>
-       <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Titulo de Libro" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+
+
+<form class="form-inline my-2 my-lg-0" action="<%= books_path %>">
+<input name="q" class="form-control mr-sm-2" type="search" placeholder="Titulo de Libro" aria-label="Search">
+<input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">
+</form>
+      
       </li>
 
       
@@ -55,8 +58,12 @@
           
           <% else %>
                
+              <%= link_to "Ingreso1", new_user_session_path, class: "dropdown-item" %> 
+              <%= link_to "Registro1", new_user_registration_path, class: "dropdown-item" %> 
+              <%= link_to "Iniciar con Facebook", user_facebook_omniauth_authorize_path, class: "dropdown-item" %>
               <a class="dropdown-item" href="<%= new_user_session_path%>">Ingreso</a>
               <a class="dropdown-item" href="<%=new_user_registration_path%>">Registro</a>
+              
               
           <% end %>
         </div>

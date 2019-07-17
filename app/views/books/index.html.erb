@@ -9,48 +9,14 @@
 
 
 
+
 <div class="container">
 
+  <div id='books' class="row">
 
-<div class="row">
+    <%= render @books %>
 
-<% @books.each do |book| %>
-
-
-
-<div class="col-lg-3 col-sx-12">
-
-<div class="card-img-top img-fluid" style="width: 20rem;">
-  <%= image_tag(book.photo, class: "card-img-top img-fluid", alt:"...", style:"width:50%") if book.photo.attached? %>
-  <div class="card-body">
-    <%= button_to "Me interesa", action: "new" %>
-    <th>Dueño del Libro</th>
-    <h6 class="card-title"><%= book.user.try(:name) %></h6>
-    <th>Titulo</th>
-    <h6 class="card-title"><%= book.title %></h6>
-    <th>Autor</th>
-    <h6 class="card-title"><%= book.author %></h6>
-    <tr>
-<td></td>
-<td></td>
-<td><%= link_to 'Show', book %></td>
-<td><%= link_to 'Edit', edit_book_path(book) %></td>
-<td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-</td>
-</tr>
-        
   </div>
-  
-</div>
-
-
-</div>
- 
-
-<% end %>
-
-
-</div>
 
 </div>
 
@@ -60,4 +26,19 @@
 
 <%= link_to 'New Book', new_book_path %>
 
+<script>
+$("[name=q]").keyup(function (event) {
+  console.log('prueba ajax');
+  
+  event.preventDefault();
+  $.ajax({
+    url: "<%= books_path %>",
+    type: "GET",
+    dataType: "script",
+    data: {q: $(this).val()}
+  });
+  
+})
+
+</script>
 

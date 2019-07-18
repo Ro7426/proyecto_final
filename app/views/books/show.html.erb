@@ -72,7 +72,7 @@
 <p>
 <strong>Photo:</strong>
 <br>
-  <%= image_tag @book.photo, class:"img-thumbnail" %>
+  <%= image_tag @book.photo.variant(resize:"500x500") %>
 </p>
 
 

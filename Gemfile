@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'omniauth-facebook'
+gem 'fog-aws'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -39,6 +40,11 @@ gem 'image_processing','~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+group:production do
+gem 'aws-sdk-s3', require:false 
+
+end
 
 group :production do
 

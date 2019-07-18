@@ -18,10 +18,13 @@
         <td></td>
         <td><%= link_to 'Show', book %></td>
          
+         <% if user_signed_in? %>
+
          <% if current_user.id == book.user.id %>
 
           <td><%= link_to 'Edit', edit_book_path(book) %></td>
           <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         <% end %>
         </td>
       </tr>  

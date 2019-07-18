@@ -32,13 +32,18 @@
                                 <%= form.text_field :author, class:'form-control', placeholder: 'Autor' %>
                                 
                             </div>
+
+                            <div class="form-group">
+                                <%= form.text_field :genre, class:'form-control', placeholder: 'Mail contacto' %>
+                                
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <%= form.text_field :editorial, class:'form-control', placeholder: 'Editorial' %>
                             </div>
                             <div class="form-group">
-                                <%= form.text_field :description, class:'form-control', placeholder: 'Descripcion' %>
+                                <%= form.text_area :description, class:'form-control', placeholder: 'Critica del libro' %>
                             </div>
                         </div>
                         <div class="col-md-6">

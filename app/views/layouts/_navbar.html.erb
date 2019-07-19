@@ -1,8 +1,12 @@
- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ 
+ 
+ <div class="container" style = margin-top:70px; >
+ 
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Brand -->
-  <%# <a class="navbar-brand" href="#">Logo</a> %>
+  
   <a class="navbar-brand" href="#">
-    <%# <img src="assets/icono2.png" alt="log1" style="width:40px;"> %>
+    
     <%= image_tag "faviconbook.png", alt: 'log1', style:'width:40px;' %>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,11 +62,9 @@
           
           <% else %>
                
-              <%= link_to "Ingreso1", new_user_session_path, class: "dropdown-item" %> 
-              <%= link_to "Registro1", new_user_registration_path, class: "dropdown-item" %> 
+              <%= link_to "Ingreso", new_user_session_path, class: "dropdown-item" %> 
+              <%= link_to "Registro", new_user_registration_path, class: "dropdown-item" %> 
               <%= link_to "Iniciar con Facebook", user_facebook_omniauth_authorize_path, class: "dropdown-item" %>
-              <a class="dropdown-item" href="<%= new_user_session_path%>">Ingreso</a>
-              <a class="dropdown-item" href="<%=new_user_registration_path%>">Registro</a>
               
               
           <% end %>
